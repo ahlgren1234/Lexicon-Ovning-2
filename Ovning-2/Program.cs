@@ -22,6 +22,7 @@
         Console.WriteLine("- -- MENU -- -");
         Console.WriteLine("1. Ungdom eller pensionär");
         Console.WriteLine("2. Biopris sällskap");
+        Console.WriteLine("3. Upprepa tio gånger");
         Console.WriteLine("0. Avsluta");
         Console.Write("Välj ett alternativ: ");
 
@@ -42,6 +43,10 @@
             case "2":
                 // Calculate ticket price for group
                 GroupTicketPrice();
+                break;
+            case "3":
+                // Repeat the users input 10 times
+                RepeatString();
                 break;
             default:
                 // Handle invalid input
@@ -120,5 +125,24 @@
         {
             return 120;
         }
+    }
+
+    //
+    // RepeatString()
+    //
+    // Repeats the user's input string 10 times.
+    //
+    private static void RepeatString()
+    {
+        Console.WriteLine("Upprepa en sträng 10 gånger:");
+        Console.Write("Ange en sträng: ");
+        string input = Console.ReadLine();
+        Console.WriteLine();
+
+        for (int i = 0; i < 10; i++)
+        {
+            Console.WriteLine($"{i + 1}. {input}");
+        }
+        Console.WriteLine();
     }
 }
